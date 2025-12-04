@@ -1,0 +1,19 @@
+{
+  "total_features": 60,
+  "by_type": {
+    "gene": 30,
+    "CDS": 25,
+    "tRNA": 2,
+    "rRNA": 3
+  },
+  "avg_length": {
+    "gene": 1106.2,
+    "CDS": 1225.2,
+    "tRNA": 76.0,
+    "rRNA": 801.0
+  },
+  "strand_distribution": {
+    "+": 63,
+    "-": 37
+  }
+}

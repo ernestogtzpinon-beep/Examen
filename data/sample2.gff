@@ -1,0 +1,92 @@
+##gff-version 3
+##sequence-region chr1 1 48200
+
+chr1	Prodigal	gene	105	1450	.	+	.	ID=gene1;Name=thrA;product=aspartokinase I
+chr1	Prodigal	CDS	105	1450	.	+	0	ID=cds1;Parent=gene1;product=aspartokinase I
+
+chr1	Prodigal	gene	1600	2450	.	+	.	ID=gene2;Name=thrB;product=homoserine dehydrogenase
+chr1	Prodigal	CDS	1600	2450	.	+	2	ID=cds2;Parent=gene2;product=homoserine dehydrogenase
+
+chr1	tRNAscan-SE	gene	2600	2675	.	+	.	ID=gene3;Name=tRNA-Leu
+chr1	tRNAscan-SE	tRNA	2600	2675	.	+	.	ID=trna3;Parent=gene3;product=tRNA-Leu-TAA
+
+chr1	Prodigal	gene	3000	3900	.	-	.	ID=gene4;Name=metE;product=methionine synthase
+chr1	Prodigal	CDS	3000	3900	.	-	1	ID=cds4;Parent=gene4;product=methionine synthase
+
+chr1	RNAmmer	gene	4200	4500	.	+	.	ID=gene5;Name=5S_rRNA
+chr1	RNAmmer	rRNA	4200	4500	.	+	.	ID=rrna5;Parent=gene5;product=5S ribosomal RNA
+
+chr1	RNAmmer	gene	4600	5200	.	+	.	ID=gene6;Name=16S_rRNA
+chr1	RNAmmer	rRNA	4600	5200	.	+	.	ID=rrna6;Parent=gene6;product=16S ribosomal RNA
+
+chr1	RNAmmer	gene	5300	6800	.	+	.	ID=gene7;Name=23S_rRNA
+chr1	RNAmmer	rRNA	5300	6800	.	+	.	ID=rrna7;Parent=gene7;product=23S ribosomal RNA
+
+chr1	Prodigal	gene	7000	7550	.	+	.	ID=gene8;Name=rplA;product=50S ribosomal protein L1
+chr1	Prodigal	CDS	7000	7550	.	+	0	ID=cds8;Parent=gene8;product=50S ribosomal protein L1
+
+chr1	Prodigal	gene	7600	8100	.	+	.	ID=gene9;Name=rplB;product=50S ribosomal protein L2
+chr1	Prodigal	CDS	7600	8100	.	+	2	ID=cds9;Parent=gene9;product=50S ribosomal protein L2
+
+chr1	Prodigal	gene	8200	9500	.	-	.	ID=gene10;Name=rpsC;product=30S ribosomal protein S3
+chr1	Prodigal	CDS	8200	9500	.	-	1	ID=cds10;Parent=gene10;product=30S ribosomal protein S3
+
+chr1	Prodigal	gene	10000	11250	.	+	.	ID=gene11;Name=recA;product=DNA recombinase RecA
+chr1	Prodigal	CDS	10000	11250	.	+	0	ID=cds11;Parent=gene11;product=DNA recombinase RecA
+
+chr1	Prodigal	gene	11350	11820	.	-	.	ID=gene12;Name=lexA;product=SOS repressor protein LexA
+chr1	Prodigal	CDS	11350	11820	.	-	0	ID=cds12;Parent=gene12;product=SOS repressor protein LexA
+
+chr1	Prodigal	gene	12000	12800	.	+	.	ID=gene13;Name=fabF;product=3-oxoacyl-ACP synthase II
+chr1	Prodigal	CDS	12000	12800	.	+	1	ID=cds13;Parent=gene13;product=3-oxoacyl-ACP synthase II
+
+chr1	Prodigal	gene	13010	14300	.	+	.	ID=gene14;Name=groL;product=chaperonin GroEL
+chr1	Prodigal	CDS	13010	14300	.	+	2	ID=cds14;Parent=gene14;product=chaperonin GroEL
+
+chr1	Prodigal	gene	14350	15000	.	+	.	ID=gene15;Name=groS;product=co-chaperonin GroES
+chr1	Prodigal	CDS	14350	15000	.	+	1	ID=cds15;Parent=gene15;product=co-chaperonin GroES
+
+chr1	Prodigal	gene	15300	16500	.	-	.	ID=gene16;Name=ftsZ;product=cell division protein FtsZ
+chr1	Prodigal	CDS	15300	16500	.	-	0	ID=cds16;Parent=gene16;product=cell division protein FtsZ
+
+chr1	Prodigal	gene	17000	18050	.	+	.	ID=gene17;Name=spo0A;product=sporulation initiation regulator Spo0A
+chr1	Prodigal	CDS	17000	18050	.	+	2	ID=cds17;Parent=gene17;product=sporulation initiation regulator Spo0A
+
+chr1	tRNAscan-SE	gene	18200	18275	.	-	.	ID=gene18;Name=tRNA-Ala
+chr1	tRNAscan-SE	tRNA	18200	18275	.	-	.	ID=trna18;Parent=gene18;product=tRNA-Ala-TGC
+
+chr1	Prodigal	gene	18500	19600	.	-	.	ID=gene19;Name=sigH;product=sporulation sigma factor SigH
+chr1	Prodigal	CDS	18500	19600	.	-	1	ID=cds19;Parent=gene19;product=sporulation sigma factor SigH
+
+chr1	Prodigal	gene	20000	21500	.	+	.	ID=gene20;Name=pfkA;product=phosphofructokinase
+chr1	Prodigal	CDS	20000	21500	.	+	0	ID=cds20;Parent=gene20;product=phosphofructokinase
+
+chr1	Prodigal	gene	22000	24400	.	+	.	ID=gene21;Name=hisA;product=N-(5-phosphoribosyl)-ATP pyrophosphatase
+chr1	Prodigal	CDS	22000	24400	.	+	2	ID=cds21;Parent=gene21;product=N-(5-phosphoribosyl)-ATP pyrophosphatase
+
+chr1	Prodigal	gene	25000	26500	.	-	.	ID=gene22;Name=purA;product=adenylosuccinate synthetase
+chr1	Prodigal	CDS	25000	26500	.	-	0	ID=cds22;Parent=gene22;product=adenylosuccinate synthetase
+
+chr1	Prodigal	gene	27000	28600	.	+	.	ID=gene23;Name=glpK;product=glycerol kinase
+chr1	Prodigal	CDS	27000	28600	.	+	1	ID=cds23;Parent=gene23;product=glycerol kinase
+
+chr1	Prodigal	gene	29000	30100	.	+	.	ID=gene24;Name=glpF;product=glycerol uptake facilitator protein
+chr1	Prodigal	CDS	29000	30100	.	+	0	ID=cds24;Parent=gene24;product=glycerol uptake facilitator protein
+
+chr1	Prodigal	gene	30500	32200	.	-	.	ID=gene25;Name=gyrA;product=DNA gyrase subunit A
+chr1	Prodigal	CDS	30500	32200	.	-	2	ID=cds25;Parent=gene25;product=DNA gyrase subunit A
+
+chr1	Prodigal	gene	32500	34500	.	-	.	ID=gene26;Name=gyrB;product=DNA gyrase subunit B
+chr1	Prodigal	CDS	32500	34500	.	-	1	ID=cds26;Parent=gene26;product=DNA gyrase subunit B
+
+chr1	Prodigal	gene	35000	36050	.	+	.	ID=gene27;Name=eglS;product=extracellular glucanase
+chr1	Prodigal	CDS	35000	36050	.	+	0	ID=cds27;Parent=gene27;product=extracellular glucanase
+
+chr1	Prodigal	gene	36500	38200	.	+	.	ID=gene28;Name=lytC;product=cell wall hydrolase
+chr1	Prodigal	CDS	36500	38200	.	+	2	ID=cds28;Parent=gene28;product=cell wall hydrolase
+
+chr1	Prodigal	gene	38500	39800	.	-	.	ID=gene29;Name=spoIIE;product=stage II sporulation protein E
+chr1	Prodigal	CDS	38500	39800	.	-	0	ID=cds29;Parent=gene29;product=stage II sporulation protein E
+
+chr1	Prodigal	gene	40000	41500	.	-	.	ID=gene30;Name=degU;product=response regulator DegU
+chr1	Prodigal	CDS	40000	41500	.	-	2	ID=cds30;Parent=gene30;product=response regulator DegU
