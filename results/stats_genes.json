@@ -1,0 +1,14 @@
+{
+  "total_features": 2,
+  "by_type": {
+    "gene": 2
+  },
+  "avg_length": {
+    "gene": 900.0
+  },
+  "strand_distribution": {
+    "+": 50,
+    "-": 50
+  },
+  "filter_type": "gene"
+}

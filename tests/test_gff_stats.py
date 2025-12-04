@@ -30,14 +30,47 @@ def test_compute_stats_from_sample():
     assert stats["strand_distribution"]["-"] in (33, 34, 33)
 
 
+def test_compute_stats_with_filter():
+    mod = load_module()
+    sample = ROOT / "data" / "sample.gff"
+    
+    # Filter by CDS type
+    stats = mod.compute_stats_from_gff(str(sample), filter_type="CDS")
+    assert stats["total_features"] == 3
+    assert stats["by_type"] == {"CDS": 3}
+    assert stats["avg_length"]["CDS"] == 84.3
+    assert stats["filter_type"] == "CDS"
+    
+    # Filter by gene type
+    stats = mod.compute_stats_from_gff(str(sample), filter_type="gene")
+    assert stats["total_features"] == 2
+    assert stats["by_type"] == {"gene": 2}
+    assert stats["avg_length"]["gene"] == 900.0
+    assert stats["filter_type"] == "gene"
+
+
 def test_cli_writes_json(tmp_path):
     mod = load_module()
     sample = ROOT / "data" / "sample.gff"
     out = tmp_path / "out.json"
     # call cli with argv
-    res = mod.cli([str(sample), str(out)])
+    res = mod.cli([f"--gff={str(sample)}", f"--out={str(out)}"])
     assert res == 0
     assert out.exists()
     data = json.loads(out.read_text(encoding="utf-8"))
     assert data["total_features"] == 6
     assert "by_type" in data and "avg_length" in data and "strand_distribution" in data
+
+
+def test_cli_with_filter(tmp_path):
+    mod = load_module()
+    sample = ROOT / "data" / "sample.gff"
+    out = tmp_path / "out_filtered.json"
+    # call cli with filter
+    res = mod.cli([f"--gff={str(sample)}", f"--out={str(out)}", "--filter-type=CDS"])
+    assert res == 0
+    assert out.exists()
+    data = json.loads(out.read_text(encoding="utf-8"))
+    assert data["total_features"] == 3
+    assert data["by_type"] == {"CDS": 3}
+    assert data["filter_type"] == "CDS"

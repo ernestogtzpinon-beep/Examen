@@ -14,8 +14,12 @@ from collections import defaultdict
 from typing import Dict, Tuple
 
 
-def compute_stats_from_gff(path: str) -> Dict:
+def compute_stats_from_gff(path: str, filter_type: str | None = None) -> Dict:
     """Compute statistics from a GFF file.
+
+    Args:
+        path: Path to GFF file
+        filter_type: If provided, only compute stats for this feature type
 
     Returns a dict with keys: total_features, by_type, avg_length, strand_distribution
     """
@@ -34,6 +38,11 @@ def compute_stats_from_gff(path: str) -> Dict:
                 # skip malformed lines
                 continue
             feature_type = cols[2]
+            
+            # Apply filter if specified
+            if filter_type and feature_type != filter_type:
+                continue
+            
             try:
                 start = int(cols[3])
                 end = int(cols[4])
@@ -71,18 +80,37 @@ def compute_stats_from_gff(path: str) -> Dict:
         "avg_length": avg_length,
         "strand_distribution": strand_distribution,
     }
+    
+    # Add filter info if applied
+    if filter_type:
+        result["filter_type"] = filter_type
 
     return result
 
 
 def cli(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Compute stats from GFF file and write JSON output")
-    parser.add_argument("input", help="Input GFF file")
-    parser.add_argument("output", help="Output JSON file")
+    parser = argparse.ArgumentParser(
+        description="Compute stats from GFF file and write JSON output"
+    )
+    parser.add_argument(
+        "--gff",
+        default="input.gff",
+        help="Input GFF file (default: input.gff)"
+    )
+    parser.add_argument(
+        "--out",
+        default="output.json",
+        help="Output JSON file (default: output.json)"
+    )
+    parser.add_argument(
+        "--filter-type",
+        default=None,
+        help="Filter statistics by feature type (e.g., gene, CDS, mRNA)"
+    )
     args = parser.parse_args(argv)
 
-    stats = compute_stats_from_gff(args.input)
-    with open(args.output, "w", encoding="utf-8") as outfh:
+    stats = compute_stats_from_gff(args.gff, filter_type=args.filter_type)
+    with open(args.out, "w", encoding="utf-8") as outfh:
         json.dump(stats, outfh, indent=2, ensure_ascii=False)
 
     return 0
