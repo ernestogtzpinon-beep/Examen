@@ -1,0 +1,17 @@
+{
+  "total_features": 6,
+  "by_type": {
+    "gene": 2,
+    "CDS": 3,
+    "mRNA": 1
+  },
+  "avg_length": {
+    "gene": 900.0,
+    "CDS": 84.3,
+    "mRNA": 150.0
+  },
+  "strand_distribution": {
+    "+": 67,
+    "-": 33
+  }
+}

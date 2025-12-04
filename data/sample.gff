@@ -1,0 +1,9 @@
+## example GFF file for tests
+# a comment line should be ignored
+
+chr1	.	gene	100	999	.	+	.	ID=gene1
+chr1	.	CDS	110	210	.	+	.	ID=cds1
+chr1	.	mRNA	120	269	.	+	.	ID=mrna1
+chr1	.	CDS	300	350	.	-	.	ID=cds2
+chr1	.	CDS	400	500	.	+	.	ID=cds3
+chr1	.	gene	2000	2899	.	-	.	ID=gene2

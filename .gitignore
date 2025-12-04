@@ -1,7 +1,28 @@
+# Ignorar entorno virtual
+.venv/
+venv/
+env/
+.env/
+
+# Carpeta de pytest
+.pytest_cache/
+
+# Cachés de Python
 __pycache__/
 *.pyc
 *.pyo
-.env
-.env/
+*.pyd
+
+# VS Code
 .vscode/
-.idea/
+
+# Archivos de pruebas generados
+test_output/
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos del sistema
+.DS_Store
